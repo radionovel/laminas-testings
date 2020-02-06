@@ -24,7 +24,9 @@
         "laminas/laminas-mvc-plugins": "^1.0.1",
         "laminas/laminas-psr7bridge": "^1.2.0",
         "laminas/laminas-session": "^2.9.1",
-        "laminas/laminas-di": "^3.1.1"
+        "laminas/laminas-di": "^3.1.1",
+        "laminas/laminas-stratigility": "^2.2.2",
+        "http-interop/http-middleware": "0.5"
     },
     "autoload": {
         "psr-4": {
