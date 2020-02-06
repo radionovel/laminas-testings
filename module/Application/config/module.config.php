@@ -10,11 +10,15 @@ declare(strict_types=1);
 
 namespace Application;
 
+use Application\Controller\IndexController;
 use Laminas\Router\Http\Literal;
 use Laminas\Router\Http\Segment;
 use Laminas\ServiceManager\Factory\InvokableFactory;
 
 return [
+    'auth:require' => [
+        IndexController::class
+    ],
     'router' => [
         'routes' => [
             'home' => [
@@ -45,6 +49,9 @@ return [
         ],
     ],
     'view_manager' => [
+        'strategies' => [
+            'ViewJsonStrategy',
+        ],
         'display_not_found_reason' => true,
         'display_exceptions'       => true,
         'doctype'                  => 'HTML5',
