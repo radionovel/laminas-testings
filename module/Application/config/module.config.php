@@ -10,11 +10,15 @@ declare(strict_types=1);
 
 namespace Application;
 
+use Application\Listeners\MyEventListener;
 use Laminas\Router\Http\Literal;
 use Laminas\Router\Http\Segment;
 use Laminas\ServiceManager\Factory\InvokableFactory;
 
 return [
+    'listeners' => [
+        MyEventListener::class
+    ],
     'router' => [
         'routes' => [
             'home' => [
