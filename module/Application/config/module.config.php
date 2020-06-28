@@ -13,13 +13,8 @@ namespace Application;
 use Application\Controller\IndexControllerFactory;
 use Application\Listeners\LoggerListener;
 use Application\Listeners\LoggerListenerFactory;
-use Application\Services\FileLogger;
-use Application\Services\Interfaces\Logger;
-use Application\Services\LoggerFactory;
-use Application\Services\MailLogger;
 use Laminas\Router\Http\Literal;
 use Laminas\Router\Http\Segment;
-use Laminas\ServiceManager\Factory\InvokableFactory;
 
 return [
     'listeners' => [
@@ -57,11 +52,10 @@ return [
     'service_manager' => [
         'factories' => [
             LoggerListener::class => LoggerListenerFactory::class,
-            Logger::class => LoggerFactory::class,
         ]
     ],
     'logger' => [
-        'driver' => FileLogger::class
+        'driver' => \Logger\FileLogger::class
     ],
     'view_manager' => [
         'display_not_found_reason' => true,

@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\Services;
+namespace Logger;
 
 use Interop\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\FactoryInterface;

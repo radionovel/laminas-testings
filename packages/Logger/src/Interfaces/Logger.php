@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\Services\Interfaces;
+namespace Logger\Interfaces;
 
 interface Logger
 {

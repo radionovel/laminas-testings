@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace Application\Listeners;
 
-use Application\Services\Interfaces\Logger;
-use Application\Services\MailLogger;
 use Interop\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\FactoryInterface;
+use Logger\Interfaces\Logger;
 
 /**
  * Class LoggerListenerFactory

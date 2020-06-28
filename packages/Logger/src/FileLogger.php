@@ -1,8 +1,8 @@
 <?php
 
-namespace Application\Services;
+namespace Logger;
 
-use Application\Services\Interfaces\Logger;
+use Logger\Interfaces\Logger;
 
 /**
  * Class MailLogger

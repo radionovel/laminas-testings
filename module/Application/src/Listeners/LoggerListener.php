@@ -3,7 +3,7 @@
 namespace Application\Listeners;
 
 use Application\Events\IndexEvent;
-use Application\Services\Interfaces\Logger;
+use Logger\Interfaces\Logger;
 use Laminas\EventManager\EventInterface;
 use Laminas\EventManager\EventManagerInterface;
 use Laminas\EventManager\ListenerAggregateInterface;
