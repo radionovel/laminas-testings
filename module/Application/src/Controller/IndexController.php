@@ -10,50 +10,31 @@ declare(strict_types=1);
 
 namespace Application\Controller;
 
-use Application\Listeners\MyEventListener;
-use Laminas\EventManager\Event;
-use Laminas\Http\PhpEnvironment\Request;
+use Application\Events\IndexEvent;
 use Laminas\Mvc\Controller\AbstractActionController;
 use Laminas\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController
 {
-    /**
-     * @var MyEventListener
-     */
-    private $listener;
-
+    use UseEventListeners;
 
     /**
      * IndexController constructor.
+     *
+     * @param array $listeners
      */
-    public function __construct()
+    public function __construct($listeners = [])
     {
-
-
-
+        $this->listeners = $listeners;
     }
 
+    /**
+     * @return ViewModel
+     */
     public function indexAction()
     {
-
-//        $this->getEventManager()->attach('index', function ($event) {
-//            var_dump($event);
-//        });
-//
-//        $this->getEventManager()->
-
-        $this->listener = new MyEventListener();
-        $this->listener->attach($this->getEventManager());
-
-        $this->getEventManager()->trigger('index', 'new Request()', ['foo' => 'bar']);
-
-        $event = new Event('index');
-        $event->setTarget('some object');
-        $event->setParams(['bar' => 'baz']);
-//
+        $event = new IndexEvent('some object');
         $this->getEventManager()->triggerEvent($event);
-
         return new ViewModel();
     }
 }
